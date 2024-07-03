@@ -1,0 +1,12 @@
+package controller;
+
+import model.DataDao;
+
+public class ProcessServiceImpl implements ProcessService{
+	private DataDao dataDao;
+	
+	@Override
+	public void selectProcess() {
+		
+	}
+}

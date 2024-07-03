@@ -1,0 +1,11 @@
+package pack.model;
+
+public class MoneyCalc implements MoneyInter {
+
+	@Override
+	public int[] calcMoney(int money) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

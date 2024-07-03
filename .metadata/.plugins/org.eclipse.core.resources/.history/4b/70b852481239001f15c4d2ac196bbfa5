@@ -1,0 +1,36 @@
+package pack.controller;
+
+import java.util.Scanner;
+
+import pack.model.SangpumInter;
+
+public class SangPumProcess implements MyInter{
+	private SangpumInter inter;
+	private String re[];
+	
+	public SangPumProcess(SangpumInter inter) {
+		this.inter = inter;
+	}
+	@Override
+	public void input() {
+		try {
+			Scanner scanner = new Scanner(System.in);
+			System.out.print("상품명 입력!");
+			String sang = scanner.next();
+			String su = scanner.next();
+			String dan = scanner.next();
+			re = String.calcMoney(sang, su, dan);
+		} catch (Exception e) {
+			System.out.println("input errr" + e);
+		}
+		
+	}
+	
+	
+	@Override
+	public void show() {
+		
+		
+		
+	}
+}
