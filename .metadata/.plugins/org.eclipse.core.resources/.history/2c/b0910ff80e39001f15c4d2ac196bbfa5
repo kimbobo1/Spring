@@ -1,9 +1,0 @@
-package pack.model;
-
-public class CalcMoney implements SangpumInter{
-	@Override
-	public void calcMoney(String sang,String su, String dan) {
-		// TODO Auto-generated method stub
-		
-	}
-}

@@ -21,7 +21,7 @@ public class MessageImpl implements MessageInter{
 				System.out.print("z");
 				t++;
 			} catch (Exception e) {
-				// TODO: handle exception
+				
 			}
 		}
 		System.out.println("\nsayHi 처리 완료");

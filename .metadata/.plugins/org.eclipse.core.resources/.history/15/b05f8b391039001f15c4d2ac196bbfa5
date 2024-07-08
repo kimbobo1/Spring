@@ -1,6 +1,0 @@
-package pack.model;
-
-public interface SangpumInter {
-	void calcMoney(String sang,String su,String dan);
-	
-}
