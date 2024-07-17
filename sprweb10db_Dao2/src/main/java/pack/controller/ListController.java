@@ -12,13 +12,15 @@ import pack.model.MemberDto;
 
 @Controller
 public class ListController {
+	
 	@Autowired
 	private MemberDao memberDao;
+	
 	@GetMapping("list")
-	public String listProcess(Model model) {
+	public String selectProcess(Model model) {
 		List<MemberDto> list = memberDao.getMemberList();
 		
-		model.addAttribute("list",list);
-		return"list";
+		model.addAttribute("list", list);
+		return "list";
 	}
 }
