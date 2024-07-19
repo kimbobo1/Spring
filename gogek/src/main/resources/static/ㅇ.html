@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>이름과 나이 입력하기</title>
+</head>
+<body>
+    <h2>이름과 나이 입력</h2>
+    <form action="/submit" method="post">
+      이름:
+        <input type="text" id="name" name="name" ><br><br>
+        
+      나이:
+        <input type="number" id="age" name="age"><br><br>
+        
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>
