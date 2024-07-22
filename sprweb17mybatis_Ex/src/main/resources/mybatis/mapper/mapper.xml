@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pack.model.DataMapinterface">
+	<select id="selectList" resultType="pack.model.Board">
+	  select * from springboard order by num desc
+	</select>
+	
+	<select id="selectSearch" parameterType="pack.controller.BoardBean"
+		resultType="pack.model.Board">
+	  SELECT jikwon_no, jikwon_name, jikwon_jik, jikwon_pay, jikwon_rating 
+	  FROM jikwon  INNER JOIN buser ON buser_num = buser_no;
+	</select>
+	
+	
+</mapper>
