@@ -2,16 +2,22 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="pack.model.DataMapinterface">
-	<select id="selectList" resultType="pack.model.Board">
-	  select * from springboard order by num desc
+
+<mapper namespace="pack.model.DataMapInterface">
+
+	<select id="selectBuserNum" parameterType="int"
+		resultType="pack.model.Jikwon">
+		select jikwon_no, jikwon_name, jikwon_jik, jikwon_pay, jikwon_rating
+		from jikwon
+		where buser_num = #{buserNum}
 	</select>
-	
-	<select id="selectSearch" parameterType="pack.controller.BoardBean"
-		resultType="pack.model.Board">
-	  SELECT jikwon_no, jikwon_name, jikwon_jik, jikwon_pay, jikwon_rating 
-	  FROM jikwon  INNER JOIN buser ON buser_num = buser_no;
+
+
+	<select id="selectRaiting" parameterType="map"
+		resultType="pack.model.Jikwon">
+		select jikwon_no, jikwon_name, jikwon_jik, jikwon_pay, jikwon_rating
+		from jikwon
+		where buser_num = #{buserNum} and jikwon_rating = #{rating}
 	</select>
-	
-	
+
 </mapper>
