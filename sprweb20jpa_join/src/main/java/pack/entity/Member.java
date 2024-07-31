@@ -1,6 +1,6 @@
 package pack.entity;
 
-import java.util.List;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +12,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pack.dto.DeptDto;
+
 import pack.dto.MemberDto;
 @Getter
 @Setter
