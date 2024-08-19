@@ -1,0 +1,17 @@
+# key: value 형식으로 작성됨 파일 확장자는 .yml
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    url: jdbc:mariadb://127.0.0.1:3306/test2
+    password: bohyun
+  thymeleaf:
+    cache: 'false'
+mybatis:
+  mapper-locations: classpath:mapper/**/**.xml
+  type-aliases-package: pack.dto.**
+server:
+  port: '80'
+  servlet:
+    session:
+      tracking-modes: cookie

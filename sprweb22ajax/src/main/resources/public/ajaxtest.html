@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	   $("#btnSingle").click(function(){
+	      $("#showData").empty();
+	      $.ajax({
+	         type:"get",
+	         url:"list",
+	         data:{
+	            "name":"James"
+	         },
+	         dataType:"json",
+	         success:function(data){
+	            let str = data.name + "<br/>";
+	            str += data.skills[0] + ", ";
+	            str += data.skills[1];
+	            $("#showData").append(str);
+	         },
+	         error:function(){
+	            $("#showData").html("<b>에러 발생</b>")
+	         }
+	      })
+	   })
+	   
+	   $("#btnMulti").click(function(){
+	      $("#showData").empty();
+	      $.ajax({
+	         type:"get",
+	         url:"list2",
+	         dataType:"json",
+	         success:function(data){
+	            let str = "<table>"
+	            let list = data.datas // datas 라는 이름으로 저장되어있는 데이터 리스트
+	            $(list).each(function(i, objArr){
+	               str += "<tr><td>" + objArr["name"] + "</td>";
+	               str += "<td>" + objArr.age + "</td></tr>";
+	            });
+	            str += "</table>";
+	            $("#showData").append(str);
+	         },
+	         error:function(){
+	            $("#showData").html("<b>에러 발생</b>")
+	         }
+	      })
+	   })
+	})
+</script>
+</head>
+<body>
+	json읽기
+	<br>
+	<button id="btnSingle">한 개 읽기</button>
+	<br>
+	<button id="btnMulti">여러 개 읽기</button>
+	<br>
+	<hr>
+	<div id="showData"></div>
+</body>
+</html>

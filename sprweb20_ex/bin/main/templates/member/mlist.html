@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>templates/member/mlist.html</title>
+</head>
+<body>
+<h2>회원 목록</h2>
+<table border="1">
+	<tr>
+		<th>번호</th><th>이름</th><th>주소</th><th>수정</th><th>삭제</th>
+	</tr>
+	<tr th:each="mem:${list}">
+		<td th:text="${mem.jik}">num</td>
+		<td th:text="${mem.jikno}">name</td>
+		<td th:text="${mem.irum}">addr</td>
+		
+	</tr>
+</table>
+<br>
+<a th:href="@{/employ/list}">직원목록</a>&nbsp;&nbsp;
+<a th:href="@{/}">메인화면</a>
+</body>
+</html>
